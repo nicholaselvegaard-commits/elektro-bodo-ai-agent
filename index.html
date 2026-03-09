@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Elektro Bodø — AI Agent</title>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<div class='hero'>
+  <div class='badge'>DEMO — Bygget for Elektro Bodø</div>
+  <h1>Din AI-agent<br><span>på jobben</span></h1>
+  <p class='sub'>Skriver rapporter. Lager tilbud. Sjekker HMS.<br>Mens du fokuserer på det elektriske arbeidet.</p>
+  <div class='stats'>
+    <div class='stat'><span>3 min</span><p>rapport istedenfor 45 min</p></div>
+    <div class='stat'><span>5x</span><p>raskere tilbudsskriving</p></div>
+    <div class='stat'><span>0 kr</span><p>ekstra ansatte</p></div>
+  </div>
+</div>
+
+<div class='demo-section'>
+  <div class='tabs'>
+    <button class='tab active' onclick='showTab("rapport")'>📋 Servicerapport</button>
+    <button class='tab' onclick='showTab("tilbud")'>💰 Tilbud</button>
+    <button class='tab' onclick='showTab("hms")'>⚠️ HMS-sjekk</button>
+  </div>
+
+  <!-- RAPPORT -->
+  <div id='rapport' class='panel active'>
+    <div class='input-side'>
+      <h2>Fyll inn det du vet</h2>
+      <input type='text' id='r-kunde' placeholder='Kundenavn' />
+      <input type='text' id='r-adresse' placeholder='Adresse' />
+      <input type='text' id='r-jobb' placeholder='Hva ble gjort? (kort)' />
+      <input type='text' id='r-utstyr' placeholder='Utstyr brukt' />
+      <button onclick='genRapport()'>⚡ Generer rapport</button>
+    </div>
+    <div class='output-side'>
+      <div id='rapport-output' class='output-box'>
+        <p class='placeholder'>Rapporten dukker opp her...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TILBUD -->
+  <div id='tilbud' class='panel'>
+    <div class='input-side'>
+      <h2>Beskriv jobben</h2>
+      <input type='text' id='t-kunde' placeholder='Kundenavn' />
+      <input type='text' id='t-jobb' placeholder='Type arbeid' />
+      <input type='text' id='t-timer' placeholder='Estimert timer' />
+      <input type='text' id='t-materiell' placeholder='Materiell (grovt)' />
+      <button onclick='genTilbud()'>⚡ Generer tilbud</button>
+    </div>
+    <div class='output-side'>
+      <div id='tilbud-output' class='output-box'>
+        <p class='placeholder'>Tilbudet dukker opp her...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HMS -->
+  <div id='hms' class='panel'>
+    <div class='input-side'>
+      <h2>Beskriv arbeidsstedet</h2>
+      <input type='text' id='h-sted' placeholder='Type lokale (loft, teknisk rom...)' />
+      <input type='text' id='h-jobb' placeholder='Type arbeid' />
+      <input type='text' id='h-folk' placeholder='Antall personer på stedet' />
+      <input type='text' id='h-risiko' placeholder='Kjente risikoer?' />
+      <button onclick='genHMS()'>⚡ Generer HMS-sjekk</button>
+    </div>
+    <div class='output-side'>
+      <div id='hms-output' class='output-box'>
+        <p class='placeholder'>HMS-rapporten dukker opp her...</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class='pitch-footer'>
+  <h2>Hva dette faktisk er</h2>
+  <div class='pitch-grid'>
+    <div class='pitch-card'>
+      <span>🤖</span>
+      <h3>En AI agent skreddersydd for dere</h3>
+      <p>Ikke et generisk verktøy. En agent som kjenner Elektro Bodø sine maler, kunder og prosedyrer.</p>
+    </div>
+    <div class='pitch-card'>
+      <span>📱</span>
+      <h3>Fungerer på mobil ute i felt</h3>
+      <p>Elektrikeren fyller inn 4 felt på telefonen. Agenten skriver ferdig rapporten før han er i bilen.</p>
+    </div>
+    <div class='pitch-card'>
+      <span>🔗</span>
+      <h3>Kobles til eksisterende systemer</h3>
+      <p>Kan integreres med Poweroffice, Visma eller eget system. Data ut — rapport inn.</p>
+    </div>
+  </div>
+  <div class='cta'>
+    <p>Interessert i en ekte versjon for Elektro Bodø?</p>
+    <a href='mailto:nicholas@example.com'>Ta kontakt</a>
+  </div>
+</div>
+
+<script src='app.js'></script>
+</body>
+</html>
